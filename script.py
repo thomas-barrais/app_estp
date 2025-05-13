@@ -30,7 +30,7 @@ page = st.sidebar.radio("Navigation", ["Présentation de l'athlète", "Présenta
 # Page : Présentation de l'athlète
 if page == "Présentation de l'athlète":
     st.markdown('<div class="sub-header">Présentation de l\'athlète</div>', unsafe_allow_html=True)
-    st.image("https://cdn.pixabay.com/photo/2016/11/29/03/53/adventure-1868817_960_720.jpg", caption="Athlète de trail", use_container_width=True)
+    st.image("https://unsplash.com/fr/photos/une-personne-courant-dans-les-bois-avec-des-arbres-en-arriere-plan-E9PdTVfEujI", caption="Athlète de trail", use_container_width=True)
     st.write("""
     **Nom :** Alex Montagne  
     **Âge :** 29 ans  
