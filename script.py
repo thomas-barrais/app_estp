@@ -36,9 +36,9 @@ if page == "Présentation de l'athlète":
     **Âge :** 29 ans  
     **Spécialité :** Trail long et ultra-trail  
     **Palmarès :**
-    - 1er - Trail des Volcans 2023
-    - 2e - Ultra du Jura 2024
-    - Finisher UTMB 2024
+    - 1er - Trail des Volcans 2022
+    - 2e - Ultra du Jura 2023
+    - 4e - UTMB 2024
 
     Passionné par les grands espaces, Alex s'entraîne en montagne toute l'année et partage ses aventures sur les réseaux sociaux.
     """)
