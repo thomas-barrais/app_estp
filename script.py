@@ -30,7 +30,7 @@ page = st.sidebar.radio("Navigation", ["Présentation de l'athlète", "Présenta
 # Page : Présentation de l'athlète
 if page == "Présentation de l'athlète":
     st.markdown('<div class="sub-header">Présentation de l\'athlète</div>', unsafe_allow_html=True)
-    st.image("https://images.unsplash.com/photo-1576618148400-0b7c164f38f4", caption="Athlète de trail", use_column_width=True)
+    st.image("https://images.unsplash.com/photo-1576618148400-0b7c164f38f4", caption="Athlète de trail", use_container_width=True)
     st.write("""
     **Nom :** Alex Montagne  
     **Âge :** 29 ans  
@@ -46,7 +46,7 @@ if page == "Présentation de l'athlète":
 # Page : Présentation de la marque
 elif page == "Présentation de la marque":
     st.markdown('<div class="sub-header">Présentation de la marque</div>', unsafe_allow_html=True)
-    st.image("https://images.unsplash.com/photo-1612300506437-0a7d3f9d7f76", caption="Marque de trail", use_column_width=True)
+    st.image("https://images.unsplash.com/photo-1612300506437-0a7d3f9d7f76", caption="Marque de trail", use_container_width=True)
     st.write("""
     **Nom :** SummitTrail Gear  
     **Fondée en :** 2017  
