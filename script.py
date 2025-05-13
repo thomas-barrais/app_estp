@@ -1,35 +1,68 @@
-cou = 1
-import pandas as pd
-
-print(cou)
-print("Salut ça marche ! It's working !!")
-#How to run strimlit app in Anaconda prompt
 import streamlit as st
-st.write("Hello, world! This is a Streamlit app.")
 
-st.title("My Streamlit App")
-st. subheader("Try out the app!")
-st.text("This is a simple text element.")
-# Choix dans une liste deroulante (dans la sidebar)
-graph_type = st.sidebar.selectbox("lil Choisissez un type de graphique :", ["Ligne", "Barres", "Aucun"])
+# Configuration de la page
+st.set_page_config(page_title="Trail App", layout="wide")
 
-st.write(f"Vous avez choisi le type de graphique : {graph_type}")
-#3 UPLOAD CSV FILE
-uploaded_file = st.file_uploader("Téléchargez un fichier CSV", type=["csv"])
+# Header commun
+st.markdown("""
+    <style>
+        .main-header {
+            font-size: 36px;
+            font-weight: bold;
+            color: #2E8B57;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .sub-header {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2E8B57;
+            margin-top: 20px;
+        }
+    </style>
+""", unsafe_allow_html=True)
 
-if uploaded_file is not None:
-    import pandas as po
-    df = pd.read_csv(uploaded_file)
-    st.write("Voici un aperçu de votre fichier :")
-    st.dataframe(df.head())
+st.markdown('<div class="main-header">Bienvenue sur Trail App</div>', unsafe_allow_html=True)
 
+# Navigation entre les pages
+page = st.sidebar.radio("Navigation", ["Présentation de l'athlète", "Présentation de la marque", "Contact"])
 
-#4 Affichage du graphique en fonction du type choisi
-    if graph_type == "Ligne":
-        st.line_chart(df)
-    elif graph_type == "Barres":
-        st.bar_chart(df)
-    else:
-        st.write("Aucun graphique selectionné.")
+# Page : Présentation de l'athlète
+if page == "Présentation de l'athlète":
+    st.markdown('<div class="sub-header">Présentation de l\'athlète</div>', unsafe_allow_html=True)
+    st.image("https://images.unsplash.com/photo-1576618148400-0b7c164f38f4", caption="Athlète de trail", use_column_width=True)
+    st.write("""
+    **Nom :** Alex Montagne  
+    **Âge :** 29 ans  
+    **Spécialité :** Trail long et ultra-trail  
+    **Palmarès :**
+    - 1er - Trail des Volcans 2023
+    - 2e - Ultra du Jura 2024
+    - Finisher UTMB 2024
 
-st.write("Merci d'avoir utilise notre application Streamlit !")
+    Passionné par les grands espaces, Alex s'entraîne en montagne toute l'année et partage ses aventures sur les réseaux sociaux.
+    """)
+
+# Page : Présentation de la marque
+elif page == "Présentation de la marque":
+    st.markdown('<div class="sub-header">Présentation de la marque</div>', unsafe_allow_html=True)
+    st.image("https://images.unsplash.com/photo-1612300506437-0a7d3f9d7f76", caption="Marque de trail", use_column_width=True)
+    st.write("""
+    **Nom :** SummitTrail Gear  
+    **Fondée en :** 2017  
+    **Spécialité :** Équipement de trail haute performance (chaussures, sacs, vêtements)
+
+    SummitTrail Gear conçoit des produits testés par des athlètes de haut niveau dans des conditions extrêmes. Son objectif : repousser les limites du possible avec confort et performance.
+    """)
+
+# Page : Contact
+elif page == "Contact":
+    st.markdown('<div class="sub-header">Contact</div>', unsafe_allow_html=True)
+    with st.form("contact_form"):
+        nom = st.text_input("Nom")
+        email = st.text_input("Email")
+        message = st.text_area("Message")
+        submitted = st.form_submit_button("Envoyer")
+
+        if submitted:
+            st.success("Merci pour votre message ! Nous vous répondrons rapidement.")
